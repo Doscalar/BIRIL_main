@@ -32,7 +32,8 @@ def train_BIRIL():
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/BIRIL-SNN.git
+git clone https://github.com/Doscalar/BIRIL_main.git
+unzip spikingjelly.zip
 pip install -r requirements.txt
 ```
 
