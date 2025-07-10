@@ -568,10 +568,9 @@ def get_args_parser(add_help=True):
         # parser = argparse.ArgumentParser(description="PyTorch Classification Training", add_help=add_help)
         parser.add_argument("--datapath", default='./', type=str,help="dataset path")
         parser.add_argument("--TrainModel", default="STDP_GS", type=str,
-                            help="train model :GS是梯度替代，STDP是STDP，STDP_GS是梯度替代和STDP的结合,STBP是STBP\
-                                GS_STDP_Iteration是GS和STDP迭代训练，GS_STDP_GS_Iteration是GS和GS_STDP迭代训练，STBP_STDP_Iteration是STBP和STDP迭代训练，STBP_STDP_GS_Iteration")
+                            help="train model :GS是梯度替代即STBP，STDP是STDP，STDP_GS是梯度替代和STDP的结合即STDP+STBP")
         parser.add_argument("--model", default="spiking_resnet18", type=str, help="model name")
-        parser.add_argument("--K", default=6, type=int, help="GS和STDP迭代的轮数，2为每次迭代，3为一次STDP2次GS，-3为一次GS两次STDP")
+        parser.add_argument("--K", default=6, type=int, help="GS和STDP迭代的轮数，2为每次迭代，3为一次STDP2次STBP，-3为一次STBP2次STDP")
         parser.add_argument("--data", default="CIFAR100", type=str, help="data name，CIFAR10，CIFAR100，MINIST，DVSGeserature，ImageNet")
         parser.add_argument("--device", default="cuda", type=str, help="device (Use cuda or cpu Default: cuda)")
         parser.add_argument('--T', default=4,type=int, help="total time-steps")
