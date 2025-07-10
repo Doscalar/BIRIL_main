@@ -34,8 +34,60 @@ def train_BIRIL():
 ```bash
 git clone https://github.com/Doscalar/BIRIL_main.git
 unzip spikingjelly.zip
+```
+
+```bash
 pip install -r requirements.txt
 ```
+
+### Training
+
+For example, train BIRIL on CIFAR-10:
+
+
+```bash
+python final_train2.0.py \
+  --data CIFAR10 \
+  --TrainModel GS_STDP_GS_Iteration \
+  --K 6 \
+  --lr 0.001 \
+  --epochs 350 \
+  --T 4
+```
+
+### Key Parameters
+
+|   Parameter    |            Description           |                   Values                   |
+|----------------|:--------------------------------:|:------------------------------------------:|
+| --TrainModel   |         Training algorithm       |            STBP, STDP, STDP+STBP           |
+|     --K        |      Iteration cycle length      |            6 (optimal), 9, 3, 4            |
+|    --data      |              Dataset             |  CIFAR10, CIFAR100, MNIST, DVSGesterature  |
+|     --T        |             Time steps           |                 4 (default)                |
+
+
+### 📂 Project Structure
+
+
+```test
+BIRIL-SNN/
+├── data/                   # Dataset storage
+├── results/                # Training outputs
+├── final_train2.0.py       # Main training script
+├── MyNet.py                # Custom SNN architectures
+├── requirements.txt        # Dependencies
+├── BIRIL实验数据.xlsx       # Experimental data
+└── figures/                # Result visualizations
+    ├── CIFAR10_1.png       # Method comparison
+    ├── CIFAR10_2.png       # Ratio comparison
+    ├── MNIST_1.png         # Method comparison
+    └── ...                 # Other result figures
+```
+
+
+
+
+
+
 
 
 ## 📊 Key Results
