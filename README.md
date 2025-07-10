@@ -40,6 +40,32 @@ unzip spikingjelly.zip
 pip install -r requirements.txt
 ```
 
+### Data install
+
+For CIFAR-10 : 
+
+```shell
+https://www.cs.toronto.edu/~kriz/cifar.html
+```
+
+For CIFAR-100 : 
+
+```shell
+https://www.cs.toronto.edu/~kriz/cifar.html
+```
+
+For MNIST : 
+
+```shell
+https://yann.lecun.com/exdb/mnist/
+```
+
+For DVS128 Gesture : 
+
+```shell
+https://aistudio.baidu.com/datasetdetail/24778
+```
+
 ### Training
 
 For example, train BIRIL on CIFAR-10:
@@ -65,8 +91,7 @@ python final_train2.0.py \
 |     --T        |             Time steps           |                 4 (default)                |
 
 
-### 📂 Project Structure
-
+## 📂 Project Structure
 
 ```test
 BIRIL-SNN/
@@ -75,26 +100,46 @@ BIRIL-SNN/
 ├── final_train2.0.py       # Main training script
 ├── MyNet.py                # Custom SNN architectures
 ├── requirements.txt        # Dependencies
-├── BIRIL实验数据.xlsx       # Experimental data
 └── figures/                # Result visualizations
     ├── CIFAR10_1.png       # Method comparison
     ├── CIFAR10_2.png       # Ratio comparison
     ├── MNIST_1.png         # Method comparison
     └── ...                 # Other result figures
+...
 ```
 
+## 📈 Visual Results
+
+### Method Comparison
+
+|                                   CIFAR-10                                       |                                     CIFAR-100                                      |
+|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+|![CIFAR-10](https://github.com/Doscalar/BIRIL_main/blob/main/figure/CIFAR10_1.png)|![CIFAR-100](https://github.com/Doscalar/BIRIL_main/blob/main/figure/CIFAR100_1.png)|
 
 
+|                                   MNIST                                     |                                  DVS128 Gesture                                    |
+|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+|![MNIST](https://github.com/Doscalar/BIRIL_main/blob/main/figure/MNIST_1.png)|![DVS128 Gesture](https://github.com/Doscalar/BIRIL_main/blob/main/figure/DVS_1.png)|
 
 
+### BIRIL Ratio Analysis
 
+
+|                                   CIFAR-10                                       |                                     CIFAR-100                                      |
+|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+|![CIFAR-10](https://github.com/Doscalar/BIRIL_main/blob/main/figure/CIFAR10_2.png)|![CIFAR-100](https://github.com/Doscalar/BIRIL_main/blob/main/figure/CIFAR100_2.png)|
+
+
+|                                   MNIST                                     |                                  DVS128 Gesture                                    |
+|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+|![MNIST](https://github.com/Doscalar/BIRIL_main/blob/main/figure/MNIST_2.png)|![DVS128 Gesture](https://github.com/Doscalar/BIRIL_main/blob/main/figure/DVS_2.png)|
 
 
 ## 📊 Key Results
 
 ### Comparative Performance (Accuracy %)
 
-| Dataset        | STDP   | STDP-STBP | BIRIL  | Improvement vs SOTA |
+|    Dataset     | STDP   | STDP-STBP | BIRIL  | Improvement vs SOTA |
 |----------------|:------:|:---------:|:------:|:-------------------:|
 | CIFAR-10       | 42.23  |   93.60   | 93.40  |       +4.46%        |
 | CIFAR-100      | 11.54  |   72.25   | 70.89  |       +18.15%       |
@@ -103,7 +148,7 @@ BIRIL-SNN/
 
 ### Optimal BIRIL Ratios
 
-| Dataset        | Best Ratio (STDP:STBP:STDP-STBP) | Accuracy |
+|    Dataset     | Best Ratio (STDP:STBP:STDP-STBP) | Accuracy |
 |----------------|:--------------------------------:|:--------:|
 | CIFAR-10       |               1:8:3              |  93.40%  |
 | CIFAR-100      |               1:8:3              |  70.89%  |
@@ -111,6 +156,20 @@ BIRIL-SNN/
 | DVS128 Gesture |               2:6:1              |  95.49%  |
 
 
+### 📚 Citation
 
+```bibtex
 
+@article{AAAI2026,
+  title={Deep Spiking Neural Network with Brain-Inspired Recurrent Iterative Learning},
+  author={Anonymous},
+  journal={Submitted to IEEE Transactions on Neural Networks and Learning Systems},
+  year={2025}
+}
+
+```
+
+### 📧 Contact
+
+For questions and collaborations: 3303318865@mail.dlut.edu.cn
 
